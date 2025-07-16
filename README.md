@@ -1,13 +1,31 @@
-# Apache Beam Data Cleaner
+# Apache Beam CSV Cleaner Pipeline
 
-## Overview
-This pipeline reads a list of keys from a source CSV file and removes any matching rows from multiple destination CSV files.
+## 1. Implementation Details
 
-## Requirements
-- Python 3.8+
-- Apache Beam (`pip install apache-beam`)
+This Apache Beam pipeline performs the following:
 
-## Running the Pipeline
+- Reads a list of keys (`dataKeys`) from a source CSV file.
+- Reads multiple destination CSV files organized in date-based folders.
+- Removes rows from the destination files where the dataKey matches any key from the source file.
+- Writes the cleaned destination CSV files back to the same folder with a configurable suffix.
+- Original files can be deleted or overwritten after verification.
+
+**Technology stack:**
+
+- Apache Beam Java SDK
+- Java 11+
+- Maven for build management
+- DirectRunner for local execution (can be adapted for cloud runners)
+
+---
+
+## 2. How to Build and Run the Jar
+
+### Build the Jar
+
+Make sure you have Maven and Java installed.
+
+Run:
 
 ```bash
-python clean_pipeline.py
+mvn clean package
