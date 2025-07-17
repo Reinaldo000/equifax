@@ -27,22 +27,22 @@ Make sure you have Maven and Java installed.
 
 Run:
 
-bash
-mvn clean package
+  bash
+  mvn clean package
 
 The executable jar will be located at:
 
-bash
-target/csv-cleaner-pipeline.jar
+  bash
+  target/csv-cleaner-pipeline.jar
 
 Run the Pipeline
 Execute the pipeline with:
-
-bash
-java -jar target/csv-cleaner-pipeline.jar \
-  --sourceFile=/path/to/source.csv \
-  --inputFolder=/path/to/destinations/ \
-  --outputSuffix=.cleaned
+  
+  bash
+  java -jar target/csv-cleaner-pipeline.jar \
+    --sourceFile=/path/to/source.csv \
+    --inputFolder=/path/to/destinations/ \
+    --outputSuffix=.cleaned
 
 Parameters:
 
